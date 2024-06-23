@@ -18,3 +18,5 @@ pip install -r requirements.txt
 
 Now just start the script! You can host it on repl or heroku, and after after 1 minute it will automaticly change time in your bio.
 
+## Important note
+After first launch you need to write your telegram-linked phone number to connect script to your account.

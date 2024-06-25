@@ -2,12 +2,13 @@ import time
 import pytz
 from datetime import datetime
 from telethon.sync import TelegramClient, functions
+from tzlocal import get_localzone
 
 def read_config(file_path):
     config = {}
     with open(file_path, 'r') as file:
         for line in file:
-            key, value = line.strip().split('=')
+            key, value = line.split('=', 1)
             config[key] = value
     return config
 
@@ -18,7 +19,6 @@ api_hash = config['api_hash']
 phone = config['phone']
 update_interval = int(config['update_interval'])
 language = config['language']
-timezone = config['timezone']
 
 client = TelegramClient('session_name', api_id, api_hash)
 
@@ -46,7 +46,7 @@ async def main():
         if current_minute != last_minute:
             await update_bio()
             last_minute = current_minute
-            time.sleep(update_interval)
+        await asyncio.sleep(1)
 
 with client:
     client.loop.run_until_complete(main())

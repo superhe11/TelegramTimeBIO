@@ -17,7 +17,6 @@ config = read_config('config.txt')
 api_id = config['api_id']
 api_hash = config['api_hash']
 phone = config['phone']
-update_interval = int(config['update_interval'])
 language = config['language']
 
 client = TelegramClient('session_name', api_id, api_hash)

@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 • Go to **API development tools** and get your **api_id** and **api_hash**
 
-• Complete your config (do NOT change update_interval) set language (ru/en etc.) and timezone (Europe/Moscow, America/New_York etc.)
+• Complete your config - set language (ru/en)
 
 Now just start the script! You can host it on repl or heroku, and after after 1 minute it will automaticly change time in your bio.
 
